@@ -25,8 +25,9 @@ const bios = {
   'koh-architects': {
     name: 'Dinah Klamert, R.A.',
     role: 'Principal-in-Charge · KOH Architecture, P.L.L.C.',
-    imgType: 'fallback',
-    imgLabel: 'KOH Architecture, P.L.L.C.',
+    imgType: 'logo',
+    logoSrc: '/assets/koh-architects-logo.png',
+    logoAlt: 'KOH Architecture, P.L.L.C. logo',
     paragraphs: [
       'Dinah Klamert is a licensed architect in Massachusetts, New York, and several other states, and has been Principal-in-Charge of KOH Architecture, P.L.L.C. since 2005. She has received AIA Design Awards and other industry recognition for original work that challenges creativity, and brings over 25 years of construction and design experience to every project.',
       'Ms. Klamert is an expert in building codes, zoning, and construction trades, providing innovative and practical pathways to enable excellence in design and management of consultants, budgets, and schedules. Her firm maintains a high percentage of repeat clients built on comprehensive responsiveness to programmatic requirements and long-term business relationships.',
@@ -65,12 +66,7 @@ if (bioModal) {
       const el = document.createElement('img');
       el.className = 'bio-modal-logo-img';
       el.src = bio.logoSrc;
-      el.alt = bio.name + ' logo';
-      modalMedia.appendChild(el);
-    } else {
-      const el = document.createElement('div');
-      el.className = 'bio-modal-logo-fallback';
-      el.innerHTML = `<span class="lf-name">${bio.imgLabel}</span><span class="lf-rule"></span>`;
+      el.alt = bio.logoAlt || (bio.name + ' logo');
       modalMedia.appendChild(el);
     }
   }
