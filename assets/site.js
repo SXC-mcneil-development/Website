@@ -12,6 +12,7 @@ const bios = {
   'ryan-mcneil': {
     name: 'Ryan McNeil',
     role: 'Founder & Principal · Developer · Entrepreneur',
+    imgType: 'photo',
     img: "url('/assets/ryan-mcneil-founder.jpg')",
     paragraphs: [
       'Ryan McNeil is the Founder and Managing Principal of McNeil Development, a New England-based real estate development and investment firm focused on creating high-quality residential and mixed-use properties in some of the region’s most desirable coastal markets. Since founding the company in 2024, Ryan has grown the firm to more than $100 million in assets under management, with projects spanning Nantucket, Greater Boston, Cape Cod, Martha’s Vineyard, Newport, and other select New England communities.',
@@ -24,6 +25,7 @@ const bios = {
   'koh-architects': {
     name: 'Dinah Klamert, R.A.',
     role: 'Principal-in-Charge · KOH Architecture, P.L.L.C.',
+    imgType: 'fallback',
     imgLabel: 'KOH Architecture, P.L.L.C.',
     paragraphs: [
       'Dinah Klamert is a licensed architect in Massachusetts, New York, and several other states, and has been Principal-in-Charge of KOH Architecture, P.L.L.C. since 2005. She has received AIA Design Awards and other industry recognition for original work that challenges creativity, and brings over 25 years of construction and design experience to every project.',
@@ -34,7 +36,8 @@ const bios = {
   'signature-building-systems': {
     name: 'Signature Building Systems',
     role: 'Modular Construction Manufacturer · Est. 1992',
-    imgLabel: 'Signature Building Systems',
+    imgType: 'logo',
+    logoSrc: '/assets/signature-building-systems-logo.webp',
     paragraphs: [
       'Signature Building Systems is an award-winning modular manufacturer founded in 1992 by experts in systems-built housing. Signature is a leader in fabricating custom designed modular homes and multifamily buildings while collaborating with numerous parties including developers, homeowners, investors, and architects.',
       'Signature’s purpose-built modular factory has fabricated over 6,000 quality prefab living units throughout New England and the Mid-Atlantic, providing exceptional value and savings to residential home buyers and commercial developers — delivering quality modular construction along the East Coast.',
@@ -45,19 +48,37 @@ const bios = {
 
 const bioModal = document.getElementById('bio-modal');
 if (bioModal) {
-  const modalImg = document.getElementById('bio-modal-img');
+  const modalMedia = document.getElementById('bio-modal-media');
   const modalRole = document.getElementById('bio-modal-role');
   const modalName = document.getElementById('bio-modal-name');
   const modalText = document.getElementById('bio-modal-text');
   let lastFocused = null;
 
+  function renderMedia(bio) {
+    modalMedia.innerHTML = '';
+    if (bio.imgType === 'photo') {
+      const el = document.createElement('div');
+      el.className = 'bio-modal-avatar';
+      el.style.backgroundImage = bio.img;
+      modalMedia.appendChild(el);
+    } else if (bio.imgType === 'logo') {
+      const el = document.createElement('img');
+      el.className = 'bio-modal-logo-img';
+      el.src = bio.logoSrc;
+      el.alt = bio.name + ' logo';
+      modalMedia.appendChild(el);
+    } else {
+      const el = document.createElement('div');
+      el.className = 'bio-modal-logo-fallback';
+      el.innerHTML = `<span class="lf-name">${bio.imgLabel}</span><span class="lf-rule"></span>`;
+      modalMedia.appendChild(el);
+    }
+  }
+
   function openBio(key) {
     const bio = bios[key];
     if (!bio) return;
-    modalImg.style.backgroundImage = bio.img || '';
-    modalImg.className = 'bio-modal-img' + (bio.img ? '' : ' ph light');
-    if (!bio.img) modalImg.setAttribute('data-label', bio.imgLabel || bio.name);
-    else modalImg.removeAttribute('data-label');
+    renderMedia(bio);
     modalRole.textContent = bio.role;
     modalName.textContent = bio.name;
     modalText.innerHTML = bio.paragraphs.map(p => `<p>${p}</p>`).join('') +
