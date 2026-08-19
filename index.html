@@ -117,16 +117,16 @@
   .market-item .mk-tag { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--red); }
   .market-item:hover .mk-tag { color: var(--red-bright); }
 
-  .market-map { max-width: 760px; margin: 0 auto 3.4rem; }
+  .market-map { max-width: 460px; margin: 0 auto 1.2rem; }
   .market-map svg { width: 100%; height: auto; display: block; }
-  .map-land, .map-island { fill: var(--white); stroke: var(--line); stroke-width: 2; }
+  .map-land { fill: var(--white); stroke: var(--line); stroke-width: 3; }
   .map-pin .dot { fill: var(--red); }
-  .map-pin .ring { fill: none; stroke: var(--red); stroke-width: 2; opacity: 0.55; transform-origin: center; animation: pinPulse 2.2s ease-out infinite; }
-  .map-pin .lbl { font-family: var(--body); font-size: 12px; letter-spacing: 0.02em; fill: var(--navy); }
-  .map-pin .lbl.home-tag { font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; fill: var(--red); }
+  .map-pin .ring { fill: none; stroke: var(--red); stroke-width: 3; opacity: 0.55; transform-origin: center; animation: pinPulse 2.2s ease-out infinite; }
+  .map-pin .lbl { font-family: var(--body); font-size: 25px; letter-spacing: 0.01em; fill: var(--navy); }
+  .map-pin .lbl.home-tag { font-size: 19px; letter-spacing: 0.06em; text-transform: uppercase; fill: var(--red); }
   .map-pin.home .dot { fill: var(--red-bright); }
-  @keyframes pinPulse { 0% { r: 8; opacity: 0.55; } 100% { r: 20; opacity: 0; } }
-  .map-caption { font-size: 0.72rem; font-style: italic; color: var(--stone); text-align: center; margin-top: 0.8rem; }
+  @keyframes pinPulse { 0% { r: 14; opacity: 0.55; } 100% { r: 34; opacity: 0; } }
+  .map-caption { font-size: 0.72rem; color: var(--stone); text-align: center; margin: 0 auto 3.2rem; max-width: 460px; letter-spacing: 0.02em; }
 
   /* ---------- SERVICES ---------- */
   .services { background: var(--paper); text-align: center; }
@@ -419,33 +419,31 @@
   <p>Our work is anchored on Nantucket, with active and pursued developments throughout the most sought-after markets in New England &mdash; each chosen for its character, demand, and lasting value.</p>
 
   <div class="market-map">
-    <svg viewBox="0 0 640 460" role="img" aria-labelledby="market-map-title" xmlns="http://www.w3.org/2000/svg">
-      <title id="market-map-title">Illustrative map of McNeil Development&rsquo;s New England markets</title>
-      <path class="map-land" d="M60,70 C40,150 30,230 70,300 C110,360 200,380 280,360 C320,350 340,330 360,300 C300,260 260,200 260,140 C260,90 300,50 360,40 C300,20 200,10 140,25 C100,35 75,50 60,70 Z" />
-      <path class="map-land" d="M360,300 C420,310 470,300 510,270 C540,248 555,215 545,185 C538,165 515,158 500,172 C490,182 495,200 505,205 C490,225 460,245 420,255 C390,262 365,270 345,285 Z" />
-      <ellipse class="map-island" cx="430" cy="345" rx="55" ry="28" transform="rotate(-8 430 345)" />
-      <ellipse class="map-island" cx="545" cy="372" rx="40" ry="26" transform="rotate(-5 545 372)" />
+    <svg viewBox="0 0 900 1173.45" role="img" aria-labelledby="market-map-title" xmlns="http://www.w3.org/2000/svg">
+      <title id="market-map-title">Map of McNeil Development&rsquo;s New England markets, from Boston&rsquo;s North Shore to Newport, RI and the islands of Nantucket and Martha&rsquo;s Vineyard</title>
+      <path class="map-land" d="M667.16,1055.82 L692.61,1070.94 L749.39,1067.79 L784.63,1057.08 L808.12,1012.98 L839.45,1079.13 L837.49,1098.03 L817.91,1108.12 L753.30,1105.59 L673.03,1067.79 L667.16,1055.82 Z M363.70,1024.32 L398.94,1024.32 L436.14,967.62 L489.00,929.81 L510.54,939.26 L524.24,983.37 L553.61,1000.38 L573.19,975.18 L571.23,1028.10 L490.96,1027.47 L430.27,1033.14 L395.03,1062.75 L363.70,1024.32 Z M-961.73,3.03 L-523.18,16.89 L-133.58,31.38 L113.10,38.94 L132.68,9.96 L173.79,9.33 L171.84,-29.74 L201.20,-52.42 L238.40,-41.08 L256.02,-80.14 L326.50,-100.30 L355.87,-81.40 L371.53,-89.59 L375.45,-44.23 L393.07,41.46 L442.01,71.07 L465.51,44.61 L492.92,66.03 L461.59,122.73 L416.56,127.14 L342.17,149.20 L365.66,180.70 L330.42,212.20 L316.71,206.53 L306.92,243.70 L299.09,217.87 L277.56,251.26 L299.09,297.88 L273.64,291.58 L263.85,309.23 L279.52,325.61 L269.73,342.62 L297.14,351.44 L308.88,328.76 L336.29,323.72 L353.91,353.33 L400.90,370.97 L424.39,397.43 L428.31,426.41 L469.42,485.01 L467.46,516.51 L453.76,541.08 L430.27,544.23 L436.14,559.35 L477.25,591.48 L500.75,586.44 L516.41,601.56 L532.07,653.86 L522.28,685.36 L547.73,715.60 L592.76,737.65 L659.33,745.21 L676.95,759.70 L714.15,731.98 L751.34,726.94 L804.21,706.15 L815.95,690.40 L813.99,640.63 L802.25,602.19 L776.80,621.72 L776.80,560.61 L767.01,525.96 L737.64,504.54 L720.02,508.95 L710.23,533.52 L688.70,496.35 L714.15,489.42 L755.26,500.76 L800.29,537.30 L835.53,614.79 L853.15,689.77 L857.07,776.08 L827.70,857.36 L823.78,885.08 L810.08,879.41 L833.57,808.85 L819.87,794.36 L768.96,797.51 L684.78,822.71 L626.05,817.67 L612.34,835.31 L579.06,839.72 L549.69,878.78 L485.08,885.08 L418.52,926.66 L387.19,956.28 L346.08,973.92 L301.05,983.37 L312.80,966.99 L381.32,945.57 L412.65,915.95 L459.63,885.08 L469.42,859.88 L465.51,786.17 L477.25,760.33 L426.35,743.95 L426.35,781.12 L412.65,772.30 L404.81,803.81 L377.41,801.92 L381.32,822.08 L320.63,829.01 L306.92,859.88 L310.84,887.60 L299.09,905.87 L250.15,920.36 L226.66,909.65 L207.08,918.47 L201.20,799.40 L165.96,788.06 L150.30,762.22 L130.72,731.98 L93.52,711.19 L83.74,675.91 L87.65,624.88 L64.16,628.66 L64.16,536.04 L-162.95,544.23 L-164.90,532.89 L-560.38,524.70 L-603.45,527.22 L-685.68,523.44 L-691.55,548.01 L-718.96,551.79 L-717.00,523.44 L-822.72,521.55 L-1053.74,512.73 L-1083.11,513.36 L-1094.86,486.90 L-1028.29,238.03 L-961.73,3.03 Z" />
+      <path class="map-land" d="M165.96,788.06 L201.20,799.40 L207.08,918.47 L167.92,947.46 L156.17,883.19 L160.09,842.87 L140.51,829.01 L144.43,929.18 L111.15,927.92 L107.23,949.98 L87.65,954.39 L85.69,919.73 L117.02,859.88 L132.68,817.04 L165.96,788.06 Z M73.95,798.77 L83.74,794.36 L105.27,827.12 L95.48,831.53 L73.95,798.77 Z M54.37,945.57 L66.12,913.43 L58.28,898.94 L68.07,863.03 L75.90,875.63 L75.90,929.18 L54.37,945.57 Z M-61.14,1166.08 L-39.61,1115.68 L-29.82,1124.50 L-27.86,1172.38 L-61.14,1166.08 Z M-196.23,1048.89 L-180.57,1030.62 L-186.44,982.74 L-162.95,977.70 L-157.07,846.02 L-157.07,751.51 L-162.95,611.64 L-162.95,544.23 L64.16,536.04 L64.16,628.66 L87.65,624.88 L83.74,675.91 L93.52,711.19 L130.72,731.98 L150.30,762.22 L144.43,790.58 L117.02,816.41 L105.27,789.95 L113.10,767.89 L75.90,733.87 L60.24,708.67 L70.03,789.95 L26.96,779.23 L50.45,803.81 L52.41,851.06 L28.92,857.99 L44.58,891.38 L44.58,936.74 L25.00,965.10 L9.34,1011.09 L-14.15,1007.31 L-67.01,1018.65 L-119.87,1040.07 L-194.27,1058.97 L-196.23,1048.89 Z" />
 
-      <g class="map-pin" transform="translate(150,60)">
-        <circle class="dot" r="6" /><text class="lbl" x="12" y="4">North Shore, MA</text>
+      <g class="map-pin" transform="translate(457.1,98.3)">
+        <circle class="dot" r="14" /><text class="lbl" x="27" y="9">North Shore, MA</text>
       </g>
-      <g class="map-pin" transform="translate(230,180)">
-        <circle class="dot" r="6" /><text class="lbl" x="12" y="4">Greater Boston</text>
+      <g class="map-pin" transform="translate(158.6,302.9)">
+        <circle class="dot" r="14" /><text class="lbl" x="27" y="9">Greater Boston</text>
       </g>
-      <g class="map-pin" transform="translate(105,290)">
-        <circle class="dot" r="6" /><text class="lbl" x="-12" y="4" text-anchor="end">Newport, RI</text>
+      <g class="map-pin" transform="translate(102.1,924.0)">
+        <circle class="dot" r="14" /><text class="lbl" x="27" y="9">Newport, RI</text>
       </g>
-      <g class="map-pin" transform="translate(460,225)">
-        <circle class="dot" r="6" /><text class="lbl" x="12" y="4">Cape Cod</text>
+      <g class="map-pin" transform="translate(656.3,805.0)">
+        <circle class="dot" r="14" /><text class="lbl" x="27" y="9">Cape Cod</text>
       </g>
-      <g class="map-pin" transform="translate(430,345)">
-        <circle class="dot" r="6" /><text class="lbl" x="-12" y="4" text-anchor="end">Martha&rsquo;s Vineyard</text>
+      <g class="map-pin" transform="translate(457.4,1004.4)">
+        <circle class="dot" r="14" /><text class="lbl" x="-27" y="9" text-anchor="end">Martha&rsquo;s Vineyard</text>
       </g>
-      <g class="map-pin home" transform="translate(545,372)">
-        <circle class="ring" r="8" /><circle class="dot" r="6" /><text class="lbl" x="14" y="-8">Nantucket</text><text class="lbl home-tag" x="14" y="8">Home Market</text>
+      <g class="map-pin home" transform="translate(763.9,1075.5)">
+        <circle class="ring" r="14" /><circle class="dot" r="14" /><text class="lbl" x="30" y="-4">Nantucket</text><text class="lbl home-tag" x="30" y="22">Home Market</text>
       </g>
     </svg>
-    <p class="map-caption">Illustrative map &mdash; not to scale.</p>
+    <p class="map-caption">Nantucket &middot; Martha&rsquo;s Vineyard &middot; Cape Cod &middot; North Shore &middot; Greater Boston &middot; Newport, RI</p>
   </div>
 
   <div class="market-list">
