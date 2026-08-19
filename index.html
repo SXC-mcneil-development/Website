@@ -126,16 +126,6 @@
   .stat .lbl { font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--stone); margin-top: 0.5rem; }
   .intro-img { aspect-ratio: 4/5; }
 
-  /* ---------- FOUNDER ---------- */
-  .founder { background: var(--navy); color: var(--cloud); }
-  .founder-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 300px 1fr; gap: 4.5rem; align-items: center; }
-  .founder-img { aspect-ratio: 4/5; width: 300px; max-width: 100%; justify-self: center; background: url('/assets/ryan-mcneil-founder.jpg') top center/cover; position: relative; }
-  .founder-img::after { content: ''; position: absolute; left: -14px; bottom: -14px; width: 70px; height: 70px; border-left: 2px solid var(--red-bright); border-bottom: 2px solid var(--red-bright); }
-  .founder h2 { font-family: var(--display); font-weight: 300; font-size: clamp(2rem,3.5vw,3rem); margin-bottom: 0.4rem; }
-  .founder .role { color: var(--red-bright); font-style: italic; font-family: var(--display); margin-bottom: 1.8rem; }
-  .founder p { color: rgba(238,241,245,0.72); margin-bottom: 1.1rem; font-size: 0.97rem; }
-  .founder .eyebrow { color: var(--red-bright); }
-
   /* ---------- MARKETS ---------- */
   .markets { background: var(--cloud); text-align: center; }
   .markets .eyebrow { display: inline-block; }
@@ -148,6 +138,17 @@
   .market-item .mk-name { font-family: var(--display); font-size: 1.4rem; margin-bottom: 0.3rem; }
   .market-item .mk-tag { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--red); }
   .market-item:hover .mk-tag { color: var(--red-bright); }
+
+  .market-map { max-width: 760px; margin: 0 auto 3.4rem; }
+  .market-map svg { width: 100%; height: auto; display: block; }
+  .map-land, .map-island { fill: var(--white); stroke: var(--line); stroke-width: 2; }
+  .map-pin .dot { fill: var(--red); }
+  .map-pin .ring { fill: none; stroke: var(--red); stroke-width: 2; opacity: 0.55; transform-origin: center; animation: pinPulse 2.2s ease-out infinite; }
+  .map-pin .lbl { font-family: var(--body); font-size: 12px; letter-spacing: 0.02em; fill: var(--navy); }
+  .map-pin .lbl.home-tag { font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; fill: var(--red); }
+  .map-pin.home .dot { fill: var(--red-bright); }
+  @keyframes pinPulse { 0% { r: 8; opacity: 0.55; } 100% { r: 20; opacity: 0; } }
+  .map-caption { font-size: 0.72rem; font-style: italic; color: var(--stone); text-align: center; margin-top: 0.8rem; }
 
   /* ---------- SERVICES ---------- */
   .services { background: var(--paper); text-align: center; }
@@ -190,6 +191,43 @@
   .record-fact dt { order: 2; color: var(--stone); font-size: 0.68rem; letter-spacing: 0.14em; line-height: 1.45; text-transform: uppercase; }
   .record-fact dd { order: 1; font-family: var(--display); font-size: 1.2rem; line-height: 1.25; color: var(--navy); }
   .record-close { max-width: 64ch; padding-left: 1.25rem; border-left: 2px solid var(--red); color: var(--navy); font-family: var(--display); font-size: 1.08rem; font-style: italic; line-height: 1.65; }
+
+  /* ---------- TEAM ---------- */
+  .team { background: var(--paper); border-top: 1px solid var(--line); text-align: center; }
+  .team .eyebrow { display: inline-block; }
+  .team > h2 { font-family: var(--display); font-weight: 300; font-size: clamp(1.9rem, 3.5vw, 2.9rem); margin-bottom: 3.4rem; }
+  .team > h2 em { font-style: italic; color: var(--red); }
+  .team-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.4rem; text-align: left; }
+  .team-card { display: block; width: 100%; background: var(--white); border: 1px solid var(--line); overflow: hidden; cursor: pointer; font: inherit; color: inherit; text-align: left; padding: 0; transition: transform 0.5s ease, box-shadow 0.5s ease; }
+  .team-card:hover { transform: translateY(-8px); box-shadow: 0 24px 48px rgba(22,38,63,0.14); }
+  .team-card:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; }
+  .team-card .img { aspect-ratio: 4/5; }
+  .team-card .body { padding: 1.5rem 1.4rem 1.8rem; }
+  .team-card .tc-name { font-family: var(--display); font-weight: 400; font-size: 1.2rem; margin-bottom: 0.3rem; }
+  .team-card .tc-role { font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--red); margin-bottom: 0.9rem; }
+  .team-card .tc-headline { font-size: 0.88rem; color: var(--stone); }
+  .team-card .tc-more { margin-top: 1rem; font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--navy); }
+  .team-card .tc-more::after { content: '\2192'; margin-left: 0.4rem; }
+
+  .partners { max-width: 1200px; margin: 4.5rem auto 0; padding-top: 3.4rem; border-top: 1px solid var(--line); }
+  .partners h3 { font-family: var(--display); font-weight: 300; font-size: clamp(1.5rem, 2.6vw, 2.1rem); margin-bottom: 2.2rem; }
+
+  /* ---------- BIO MODAL ---------- */
+  .bio-modal[hidden] { display: none; }
+  .bio-modal { position: fixed; inset: 0; z-index: 200; display: flex; align-items: center; justify-content: center; padding: 2rem; }
+  .bio-modal-backdrop { position: absolute; inset: 0; background: rgba(14,26,45,0.72); backdrop-filter: blur(2px); }
+  .bio-modal-panel { position: relative; background: var(--white); max-width: 760px; width: 100%; max-height: 88vh; overflow-y: auto; display: grid; grid-template-columns: 220px 1fr; text-align: left; box-shadow: 0 40px 90px rgba(0,0,0,0.35); }
+  .bio-modal-img { min-height: 240px; background-size: cover; background-position: top center; }
+  .bio-modal-body { padding: 2.4rem 2.2rem; }
+  .bio-modal-eyebrow { color: var(--red); font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 0.6rem; }
+  .bio-modal-body h3 { font-family: var(--display); font-weight: 300; font-size: 1.7rem; margin-bottom: 1.3rem; }
+  .bio-modal-body p { color: var(--stone); font-size: 0.92rem; margin-bottom: 1rem; }
+  .bio-modal-close { position: absolute; top: 0.7rem; right: 0.8rem; width: 34px; height: 34px; border: 1px solid var(--line); background: var(--white); color: var(--navy); cursor: pointer; font-size: 1.2rem; line-height: 1; z-index: 2; }
+  .bio-modal-close:hover { background: var(--navy); color: var(--white); border-color: var(--navy); }
+  @media (max-width: 640px) {
+    .bio-modal-panel { grid-template-columns: 1fr; }
+    .bio-modal-img { aspect-ratio: 16/9; min-height: 0; }
+  }
 
   /* ---------- GALLERY ---------- */
   .gallery { background: var(--navy-deep); color: var(--cloud); text-align: center; }
@@ -258,8 +296,7 @@
     .nav-links { display: none; }
     section { padding: 4.5rem 1.5rem; }
     .hero-inner { padding: 0 1.5rem 5.5rem; }
-    .intro-grid { grid-template-columns: 1fr; gap: 2.5rem; } .founder-grid { grid-template-columns: 1fr; gap: 2rem; } .founder-img { margin: 0 auto; }
-    .founder-img { aspect-ratio: 4/5; width: 260px; margin: 0 auto; }
+    .intro-grid { grid-template-columns: 1fr; gap: 2.5rem; }
     .svc-grid { grid-template-columns: repeat(2, 1fr); }
     .market-list { grid-template-columns: repeat(2, 1fr); }
     .record-project, .record-project.flip { grid-template-columns: 1fr; }
@@ -366,6 +403,7 @@
     <li><a href="#about">About</a></li>
     <li><a href="#markets">Markets</a></li>
     <li><a href="#track-record">Track Record</a></li>
+    <li><a href="#team">Team</a></li>
     <li><a href="#gallery">Gallery</a></li>
     <li><a href="#contact">Seller Inquiry</a></li>
   </ul>
@@ -397,26 +435,41 @@
   </div>
 </section>
 
-<section class="founder">
-  <div class="founder-grid">
-    <div class="founder-img reveal"></div>
-    <div class="reveal">
-      <p class="eyebrow">Founder</p>
-      <h2>Ryan McNeil</h2>
-      <p class="role">Founder &amp; Principal &middot; Developer &middot; Entrepreneur</p>
-      <p>Ryan McNeil is the Founder and Managing Principal of McNeil Development, a New England-based real estate development and investment firm focused on creating high-quality residential and mixed-use properties in some of the region&rsquo;s most desirable coastal markets. Since founding the company in 2024, Ryan has grown the firm to more than $100 million in assets under management, with projects spanning Nantucket, Greater Boston, Cape Cod, Martha&rsquo;s Vineyard, Newport, and other select New England communities.</p>
-      <p>A 2022 graduate of Princeton University, Ryan was a four-year varsity football player and three-time All-Ivy League selection. The discipline, resilience, and leadership developed through Division I athletics continue to shape his approach to business, driving a commitment to excellence, accountability, and long-term value creation.</p>
-      <p>Ryan&rsquo;s experience spans the full development lifecycle, including acquisitions, capital raising, underwriting, design, permitting, construction management, and asset disposition. He has led a diverse range of projects, from luxury single-family residences and condominium conversions to multifamily and mixed-use developments. Known for his hands-on approach, Ryan remains actively involved in every stage of each project, ensuring that execution aligns with the firm&rsquo;s standards for quality, efficiency, and design.</p>
-      <p>With a deep appreciation for New England&rsquo;s coastal communities, Ryan focuses on identifying opportunities where thoughtful development can enhance neighborhoods while delivering exceptional experiences for homeowners, residents, and investors alike. His investment philosophy centers on creating enduring assets in locations with strong fundamentals, limited supply, and lasting demand.</p>
-      <p>Today, Ryan continues to expand McNeil Development&rsquo;s portfolio while building strategic partnerships with investors, lenders, and industry professionals who share a long-term vision for thoughtful growth and value creation throughout New England.</p>
-    </div>
-  </div>
-</section>
-
 <section class="markets" id="markets">
   <p class="eyebrow">Where We Build</p>
   <h2>Rooted in <em>Nantucket.</em> Expanding across the coast.</h2>
   <p>Our work is anchored on Nantucket, with active and pursued developments throughout the most sought-after markets in New England &mdash; each chosen for its character, demand, and lasting value.</p>
+
+  <div class="market-map">
+    <svg viewBox="0 0 640 460" role="img" aria-labelledby="market-map-title" xmlns="http://www.w3.org/2000/svg">
+      <title id="market-map-title">Illustrative map of McNeil Development&rsquo;s New England markets</title>
+      <path class="map-land" d="M60,70 C40,150 30,230 70,300 C110,360 200,380 280,360 C320,350 340,330 360,300 C300,260 260,200 260,140 C260,90 300,50 360,40 C300,20 200,10 140,25 C100,35 75,50 60,70 Z" />
+      <path class="map-land" d="M360,300 C420,310 470,300 510,270 C540,248 555,215 545,185 C538,165 515,158 500,172 C490,182 495,200 505,205 C490,225 460,245 420,255 C390,262 365,270 345,285 Z" />
+      <ellipse class="map-island" cx="430" cy="345" rx="55" ry="28" transform="rotate(-8 430 345)" />
+      <ellipse class="map-island" cx="545" cy="372" rx="40" ry="26" transform="rotate(-5 545 372)" />
+
+      <g class="map-pin" transform="translate(150,60)">
+        <circle class="dot" r="6" /><text class="lbl" x="12" y="4">North Shore, MA</text>
+      </g>
+      <g class="map-pin" transform="translate(230,180)">
+        <circle class="dot" r="6" /><text class="lbl" x="12" y="4">Greater Boston</text>
+      </g>
+      <g class="map-pin" transform="translate(105,290)">
+        <circle class="dot" r="6" /><text class="lbl" x="-12" y="4" text-anchor="end">Newport, RI</text>
+      </g>
+      <g class="map-pin" transform="translate(460,225)">
+        <circle class="dot" r="6" /><text class="lbl" x="12" y="4">Cape Cod</text>
+      </g>
+      <g class="map-pin" transform="translate(430,345)">
+        <circle class="dot" r="6" /><text class="lbl" x="-12" y="4" text-anchor="end">Martha&rsquo;s Vineyard</text>
+      </g>
+      <g class="map-pin home" transform="translate(545,372)">
+        <circle class="ring" r="8" /><circle class="dot" r="6" /><text class="lbl" x="14" y="-8">Nantucket</text><text class="lbl home-tag" x="14" y="8">Home Market</text>
+      </g>
+    </svg>
+    <p class="map-caption">Illustrative map &mdash; not to scale.</p>
+  </div>
+
   <div class="market-list">
     <div class="market-item"><div class="mk-name">Nantucket</div><div class="mk-tag">Home Market</div></div>
     <div class="market-item"><div class="mk-name">Martha&rsquo;s Vineyard</div><div class="mk-tag">Active</div></div>
@@ -459,10 +512,8 @@
         <div class="record-fact"><dt>Residences</dt><dd>Two 5,000+ SF single-family homes</dd></div>
         <div class="record-fact"><dt>Acquisition</dt><dd>August 2026</dd></div>
         <div class="record-fact"><dt>Residences</dt><dd>Five bedrooms per residence</dd></div>
-        <div class="record-fact"><dt>Interior</dt><dd>Finished lower levels</dd></div>
         <div class="record-fact"><dt>Outdoor Living</dt><dd>Private pools and outdoor showers</dd></div>
         <div class="record-fact"><dt>Approvals</dt><dd>Existing HDC-approved plans</dd></div>
-        <div class="record-fact"><dt>Zoning</dt><dd>R-5 zoning</dd></div>
       </dl>
       <p class="record-close">Designed to pair enduring Nantucket character with modern coastal living, the project reflects McNeil Development&rsquo;s hands-on approach from acquisition and approvals through construction and disposition.</p>
     </div>
@@ -486,7 +537,6 @@
         <div class="record-fact"><dt>Scope</dt><dd>Full gut renovation</dd></div>
         <div class="record-fact"><dt>Views</dt><dd>Nantucket Harbor and Sound</dd></div>
         <div class="record-fact"><dt>Status</dt><dd>Demolition underway</dd></div>
-        <div class="record-fact"><dt>Structure</dt><dd>Joint venture partnership</dd></div>
         <div class="record-fact"><dt>Estimated Completion</dt><dd>January 2027</dd></div>
       </dl>
       <p class="record-close">A rare combination of acreage, outlook, and proximity &mdash; reimagined down to the studs while keeping the quiet, weathered character that defines this stretch of the harbor.</p>
@@ -536,7 +586,6 @@
         <div class="record-fact"><dt>Views</dt><dd>Nantucket Harbor and Sound</dd></div>
         <div class="record-fact"><dt>Design Review</dt><dd>Three months for HDC approval</dd></div>
         <div class="record-fact"><dt>Construction</dt><dd>Twelve-month timeline</dd></div>
-        <div class="record-fact"><dt>Structure</dt><dd>Joint venture partnership</dd></div>
         <div class="record-fact"><dt>Estimated Completion</dt><dd>January 2028</dd></div>
       </dl>
       <p class="record-close">Assembling the neighboring parcel gives the site room to breathe &mdash; a single residence with the setbacks, sightlines, and privacy that the location deserves.</p>
@@ -553,13 +602,11 @@
     <div class="record-body">
       <p class="record-label">Nantucket, Massachusetts &middot; Permitted Lot &amp; Development</p>
       <h3 id="orange-title">123 Orange Street</h3>
-      <p class="record-summary">A permitted 0.46-acre lot a short walk from downtown Nantucket, planned as two buildings holding four residential units. Both buildings include finished lower levels, delivering approximately 6,000 square feet of finished living area.</p>
+      <p class="record-summary">A permitted 0.46-acre lot a short walk from downtown Nantucket, planned as two buildings holding four residential units and delivering approximately 6,000 square feet of finished living area.</p>
       <dl class="record-facts" aria-label="123 Orange Street project details">
         <div class="record-fact"><dt>Site</dt><dd>0.46 acres</dd></div>
         <div class="record-fact"><dt>Buildings &amp; Units</dt><dd>Two buildings, four units</dd></div>
         <div class="record-fact"><dt>Living Area</dt><dd>Approximately 6,000 SF finished</dd></div>
-        <div class="record-fact"><dt>Interior</dt><dd>Finished lower levels</dd></div>
-        <div class="record-fact"><dt>Zoning</dt><dd>CMI</dd></div>
         <div class="record-fact"><dt>Ownership Interest</dt><dd>Fee simple</dd></div>
         <div class="record-fact"><dt>Location</dt><dd>Short walk to downtown</dd></div>
         <div class="record-fact"><dt>Status</dt><dd>Permitted lot and development plan</dd></div>
@@ -568,6 +615,60 @@
     </div>
   </article>
 </section>
+
+<section class="team" id="team">
+  <p class="eyebrow">Leadership</p>
+  <h2>The people behind <em>every build.</em></h2>
+  <div class="team-grid">
+    <button type="button" class="team-card reveal" data-bio="ryan-mcneil">
+      <div class="img" style="background-image:url('/assets/ryan-mcneil-founder.jpg');background-size:cover;background-position:top center;"></div>
+      <div class="body">
+        <div class="tc-name">Ryan McNeil</div>
+        <div class="tc-role">Founder &amp; Principal</div>
+        <p class="tc-headline">Leads McNeil Development&rsquo;s full development lifecycle, from acquisition through design, construction, and sale.</p>
+        <div class="tc-more">Read Biography</div>
+      </div>
+    </button>
+  </div>
+
+  <div class="partners">
+    <p class="eyebrow">Trusted Partners</p>
+    <h3>Collaborators we build with.</h3>
+    <div class="team-grid partners-grid">
+      <button type="button" class="team-card reveal" data-bio="koh-architects">
+        <div class="img ph light" data-label="KOH Architecture, P.L.L.C."></div>
+        <div class="body">
+          <div class="tc-name">Dinah Klamert, R.A.</div>
+          <div class="tc-role">Principal-in-Charge &middot; KOH Architecture, P.L.L.C.</div>
+          <p class="tc-headline">Licensed architect with over 25 years of experience across residential, mixed-use, and commercial design.</p>
+          <div class="tc-more">Read Biography</div>
+        </div>
+      </button>
+      <button type="button" class="team-card reveal" data-bio="signature-building-systems">
+        <div class="img ph light" data-label="Signature Building Systems"></div>
+        <div class="body">
+          <div class="tc-name">Signature Building Systems</div>
+          <div class="tc-role">Modular Construction Manufacturer</div>
+          <p class="tc-headline">Award-winning modular manufacturer delivering quality construction along the East Coast since 1992.</p>
+          <div class="tc-more">Read Biography</div>
+        </div>
+      </button>
+    </div>
+  </div>
+</section>
+
+<div class="bio-modal" id="bio-modal" hidden>
+  <div class="bio-modal-backdrop" data-close></div>
+  <div class="bio-modal-panel" role="dialog" aria-modal="true" aria-labelledby="bio-modal-name">
+    <button type="button" class="bio-modal-close" data-close aria-label="Close biography">&times;</button>
+    <div class="bio-modal-img" id="bio-modal-img"></div>
+    <div class="bio-modal-body">
+      <p class="bio-modal-eyebrow" id="bio-modal-role"></p>
+      <h3 id="bio-modal-name"></h3>
+      <div id="bio-modal-text"></div>
+    </div>
+  </div>
+</div>
 
 <section class="gallery" id="gallery">
   <p class="eyebrow">The Region</p>
@@ -611,7 +712,7 @@
     </div>
     <div class="foot-col">
       <h4>Explore</h4>
-      <a href="#home">Home</a><a href="#about">About</a><a href="#markets">Markets</a><a href="#track-record">Track Record</a><a href="#gallery">Gallery</a><a href="/privacy">Privacy Policy</a>
+      <a href="#home">Home</a><a href="#about">About</a><a href="#markets">Markets</a><a href="#track-record">Track Record</a><a href="#team">Team</a><a href="#gallery">Gallery</a><a href="/privacy">Privacy Policy</a>
     </div>
     <div class="foot-col">
       <h4>Get in Touch</h4>
