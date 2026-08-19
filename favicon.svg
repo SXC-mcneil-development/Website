@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="McNeil Development">
+  <rect width="64" height="64" rx="8" fill="#16263f"/>
+  <path d="M14 46V18h6.6l11.4 19.2L43.4 18H50v28h-6.2V29.4L33.6 46h-3.2L20.2 29.4V46z" fill="#fbfaf8"/>
+  <rect x="14" y="50" width="36" height="2.4" fill="#a8232f"/>
+</svg>

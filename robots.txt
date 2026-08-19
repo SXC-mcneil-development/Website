@@ -1,0 +1,7 @@
+# mcneil-development.com
+# All crawlers are welcome. Nothing on this site is hidden or cloaked.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://mcneil-development.com/sitemap.xml
