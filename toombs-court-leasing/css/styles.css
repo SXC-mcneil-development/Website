@@ -152,7 +152,6 @@ em { font-style: italic; color: var(--mcneil-red); }
 
 .lots-photo { margin: 0 0 1.6rem; position: relative; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); }
 .lots-photo img { width: 100%; height: clamp(260px, 42vw, 520px); object-fit: cover; object-position: center 45%; display: block; }
-.lots-photo figcaption { position: absolute; left: 1rem; bottom: 1rem; background: rgba(22,38,63,0.82); color: var(--white); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; padding: 0.45rem 0.8rem; border-radius: 4px; }
 .plan-wrap { position: relative; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); background: var(--white); }
 .plan-wrap img { width: 100%; height: auto; }
 .lot-hotspot {
