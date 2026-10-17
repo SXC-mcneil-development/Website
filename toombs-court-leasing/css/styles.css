@@ -154,7 +154,7 @@ em { font-style: italic; color: var(--mcneil-red); }
 .lots-photo img { width: 100%; height: clamp(260px, 42vw, 520px); object-fit: cover; object-position: center 45%; display: block; }
 .plan-wrap { position: relative; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); background: var(--white); }
 .plan-wrap img { width: 100%; height: auto; }
-/* Lot markers: pulsing dot centered on each lot, tag floats above */
+/* Lot markers: pulsing dot centered on each lot */
 .lot-hotspot {
   position: absolute; width: 44px; height: 44px; padding: 0; margin: 0;
   transform: translate(-50%, -50%); background: none; border: none; cursor: pointer;
@@ -177,15 +177,8 @@ em { font-style: italic; color: var(--mcneil-red); }
 .lot-hotspot:hover .lot-hotspot__dot, .lot-hotspot:focus-visible .lot-hotspot__dot,
 .lot-hotspot.is-active .lot-hotspot__dot { transform: scale(1.2); background: var(--mcneil-red); }
 .lot-hotspot:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; border-radius: 50%; }
-.lot-hotspot__tag {
-  position: absolute; bottom: calc(100% - 4px); left: 50%; transform: translateX(-50%);
-  background: var(--ink); color: var(--white);
-  font-size: 0.66rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.3rem 0.6rem;
-  border-radius: 4px; white-space: nowrap; box-shadow: 0 2px 8px rgba(22,38,63,0.25);
-}
 @media (max-width: 600px) {
   .lot-hotspot__dot { width: 12px; height: 12px; border-width: 2px; }
-  .lot-hotspot__tag { font-size: 0.55rem; letter-spacing: 0.06em; padding: 0.2rem 0.4rem; }
 }
 @media (prefers-reduced-motion: reduce) {
   .lot-hotspot__dot::before, .lot-hotspot__dot::after { animation: none; opacity: 0.5; transform: scale(1.8); }
