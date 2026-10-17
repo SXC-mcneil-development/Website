@@ -197,13 +197,13 @@ em { font-style: italic; color: var(--mcneil-red); }
   width: 100%; border: 1px solid var(--line); border-radius: var(--radius); background: var(--white);
 }
 .layout-example__thumbs { display: flex; flex-direction: column; gap: 1rem; }
-@media (max-width: 800px) { .layout-example__thumbs { flex-direction: row; } }
+@media (max-width: 800px) { .layout-example__thumbs { display: grid; grid-template-columns: repeat(2, 1fr); } }
 .layout-example__thumbs button {
   all: unset; cursor: pointer; display: flex; flex-direction: column; gap: 0.6rem;
   border-radius: 8px; overflow: hidden; flex: 1;
 }
 .layout-example__thumbs img {
-  width: 100%; height: 130px; object-fit: cover; border-radius: 8px; transition: transform 0.4s ease;
+  width: 100%; height: 110px; object-fit: cover; border-radius: 8px; transition: transform 0.4s ease;
 }
 .layout-example__thumbs button:hover img { transform: scale(1.05); }
 .layout-example__thumbs span {
