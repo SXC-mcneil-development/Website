@@ -59,18 +59,20 @@
 
   const renderUnits = (unitTypes) => {
     unitGrid.innerHTML = unitTypes
-      .map(
-        (u) => `
+      .map((u) => {
+        // Only show details once real figures exist in units.json — no placeholders.
+        const details = [
+          u.sqft && `<li>${u.sqft} sq ft</li>`,
+          u.count && `<li>${u.count} units available</li>`,
+        ].filter(Boolean);
+        return `
       <div class="unit-card">
         <h3>${u.label}</h3>
         <div class="rent">${u.rentDisplay}</div>
-        <ul>
-          <li>${u.sqft ? u.sqft + ' sq ft' : 'Square footage: [TBD]'}</li>
-          <li>${u.count ? u.count + ' units available' : 'Unit count: confirmed by phone'}</li>
-        </ul>
+        ${details.length ? `<ul>${details.join('')}</ul>` : ''}
         <button class="btn btn-outline" data-unit="${u.id}">Inquire — ${u.label}</button>
-      </div>`
-      )
+      </div>`;
+      })
       .join('');
 
     unitGrid.querySelectorAll('[data-unit]').forEach((btn) => {
