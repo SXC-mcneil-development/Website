@@ -1,0 +1,62 @@
+{
+  "_source": "Catalogue.pdf — 2027 Nantucket Rental Housing (McNeil Development). Property offers studio–3BR units; the catalogue publishes starting rent by unit type only (no per-unit ID, floor, or square footage). Leasing is confirmed directly by phone/email, so exact unit inventory changes in real time.",
+  "property": {
+    "name": "1 Toombs Court",
+    "lots": ["Lot B", "Lot C"],
+    "address": "1 Toombs Court, Nantucket, MA",
+    "availabilityDate": "2027-01-01",
+    "leasedBy": "McNeil Development",
+    "leasingPhone": "(617) 780-1627",
+    "leasingEmail": "ryan@mcneil-development.com"
+  },
+  "unitTypes": [
+    {
+      "id": "studio",
+      "label": "Studio",
+      "startingRent": 3500,
+      "rentDisplay": "$3,500/mo",
+      "sqft": null,
+      "count": null,
+      "features": ["[TBD]"],
+      "floorPlanImage": null
+    },
+    {
+      "id": "1br",
+      "label": "1 Bedroom",
+      "startingRent": 4500,
+      "rentDisplay": "from $4,500/mo",
+      "sqft": null,
+      "count": null,
+      "features": ["[TBD]"],
+      "floorPlanImage": null
+    },
+    {
+      "id": "2br",
+      "label": "2 Bedroom",
+      "startingRent": 5500,
+      "rentDisplay": "from $5,500/mo",
+      "sqft": null,
+      "count": null,
+      "features": ["[TBD]"],
+      "floorPlanImage": null
+    },
+    {
+      "id": "3br",
+      "label": "3 Bedroom",
+      "startingRent": 6500,
+      "rentDisplay": "from $6,500/mo",
+      "sqft": null,
+      "count": null,
+      "features": ["[TBD]"],
+      "floorPlanImage": null
+    }
+  ],
+  "excluded": [
+    { "property": "1 Toombs Court – Lot A", "availabilityDate": "2027-05-01", "reason": "Not January 1 availability — out of scope per brief" },
+    { "property": "123 Orange Street – Town", "availabilityDate": "2027-05-01", "reason": "Different property, not January 1 availability — out of scope per brief" }
+  ],
+  "workforceHousing": {
+    "available": true,
+    "note": "Multi-unit and multi-bedroom placements may be available across the January and May releases for employers housing a seasonal or year-round team. Call with headcount, bedroom needs, and start dates."
+  }
+}
