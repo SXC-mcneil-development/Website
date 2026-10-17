@@ -255,7 +255,7 @@ em { font-style: italic; color: var(--mcneil-red); }
 .transit-feature__logo img { width: 100%; max-width: 280px; height: auto; display: block; }
 .transit-feature h3 { font-size: 1.5rem; margin: 0.3rem 0 0.6rem; }
 .transit-feature p { font-size: 0.92rem; color: var(--ink-soft); margin: 0; }
-.transit-feature p a, .highlight-list a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+.transit-feature p a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
 .source-note { font-size: 0.76rem; color: var(--slate); margin-top: 1.6rem; }
 
 /* ===== About developer ===== */
