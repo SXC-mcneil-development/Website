@@ -44,7 +44,7 @@ a { color: inherit; }
 .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 2rem; }
 section { padding: 6.5rem 0; }
 h1, h2, h3, h4 { font-family: var(--display); font-weight: 400; margin: 0 0 1rem; letter-spacing: -0.01em; }
-em { font-style: italic; color: var(--sky); }
+em { font-style: italic; color: var(--mcneil-red); }
 .eyebrow {
   font-size: 0.74rem; letter-spacing: 0.26em; text-transform: uppercase;
   color: var(--slate); margin-bottom: 1rem; display: block;
