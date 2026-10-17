@@ -150,6 +150,9 @@ em { font-style: italic; color: var(--mcneil-red); }
 .section-head { max-width: 62ch; margin-bottom: 3rem; }
 .section-head h2 { font-size: clamp(1.9rem, 3.4vw, 2.9rem); }
 
+.lots-photo { margin: 0 0 1.6rem; position: relative; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); }
+.lots-photo img { width: 100%; height: clamp(260px, 42vw, 520px); object-fit: cover; object-position: center 45%; display: block; }
+.lots-photo figcaption { position: absolute; left: 1rem; bottom: 1rem; background: rgba(22,38,63,0.82); color: var(--white); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; padding: 0.45rem 0.8rem; border-radius: 4px; }
 .plan-wrap { position: relative; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); background: var(--white); }
 .plan-wrap img { width: 100%; height: auto; }
 .lot-hotspot {
@@ -224,6 +227,7 @@ em { font-style: italic; color: var(--mcneil-red); }
 .gallery__grid button:hover img { transform: scale(1.06); }
 .gallery__grid .span-2 { grid-column: span 2; }
 .gallery__grid .span-2row { grid-row: span 2; }
+.gallery__grid .span-full { grid-column: 1 / -1; grid-row: span 2; }
 @media (max-width: 860px) { .gallery__grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 180px; grid-auto-flow: dense; } .gallery__grid .span-2 { grid-column: span 2; } }
 @media (max-width: 540px) { .gallery__grid { grid-auto-rows: 140px; gap: 0.6rem; } }
 
